@@ -86,10 +86,13 @@ This indicates that the classifier performs well across a wide range of business
 Some companies may remain unlabeled if their description does not meet the minimum similarity required for any label. **This is intentional** - it helps avoid assigning misleading or noisy classifications.
 
 
-## Example output
-> SK Fish Market is a company categorized under fish processing. It is located in Assam, India.","['Fish Processing Services', 'Packaging Services for Seafood']",Retail,"Meat, Fish & Seafood Stores",Fish and Seafood Retailers,"['Livestock Dealer Services', 'Fishing and Hunting Services', 'Meat Processing Services', 'Seafood Processing Services', 'Ice Production Services', 'Food Processing Services', 'Market Research Services']  
+### Example output - labeled
+> SK Fish Market is a company categorized under fish processing. It is located in Assam, India.","['Fish Processing Services', 'Packaging Services for Seafood']",Retail,"Meat, Fish & Seafood Stores",Fish and Seafood Retailers,"['Livestock Dealer Services', 'Fishing and Hunting Services', 'Meat Processing Services', 'Seafood Processing Services', 'Ice Production Services', 'Food Processing Services', 'Market Research Services']
 
-The output is copied from the input file, where was created a new column 'insurance_label'.
+### Example output - unlabeled
+>"Kabowa Villas is a villa located in Kampala, Uganda.","['Accommodation Services', 'Villa Rental Services']",Services,Resorts,Hotels (except Casino Hotels) and Motels,[]
+
+The examples are copied from the input file, where was created a new column 'insurance_label'.
 
 ## Evaluation Strategy
 
@@ -97,6 +100,15 @@ Since ground-truth labels were not available, quality was assessed by:
 - Manual inspection of a random sample of predictions
 - Tracking % of companies receiving no label
 - Comparing noise level across thresholds and models (MiniLM vs E5)
+
+## Why do I use sentence-transformers
+
+I chose to use sentence-transformers because this project requires an understanding of meaning. The goal is to classify companies into insurance-related categories based on often vague, unstructured descriptions. Sentence-transformers provide a powerful alternative by encoding each company description and each taxonomy label into a semantic vector — a dense numerical representation of its meaning.  
+
+
+By comparing these vectors using cosine similarity, the classifier can identify conceptual matches. This enables the system to assign accurate labels even when wording varies significantly, without requiring any labeled training data.  
+
+
 
 ## Conclusion
 Although the classifier does a good job overall, there are instances where companies are given labels that are either unrelated or of poor quality.  Raising the similarity threshold alone won't always eliminate these misclassifications; in fact, doing so too much may result in the omission of pertinent labels.
