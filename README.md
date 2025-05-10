@@ -19,9 +19,12 @@ The result is a fast, lightweight, and reproducible classification system tailor
 
 ## First steps
 When I first started the challenge I jumped right into the two files provided, the list of companies and the insurance taxonomy. When I opened the list of companies and saw the description part I instantly thought of matching the words from the description to the labels in insurance taxonomy.  
+
 ![companies](https://github.com/Gaby6784/Company_Classifier/blob/main/doc_screenshots/Screenshot%202025-05-10%20at%2014.11.53.png)  
+
 Then, I opened the taxonomy and I was expecting to see a lot more labels because of the large number of companies.  
-![taxonomy]()  
+
+![taxonomy](https://github.com/Gaby6784/Company_Classifier/blob/main/doc_screenshots/Screenshot%202025-05-10%20at%2014.12.36.png)  
 
 
 To start off, we need to install the required libraries:  
