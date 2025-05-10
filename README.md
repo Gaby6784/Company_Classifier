@@ -10,12 +10,12 @@ This project addresses the challenge of classifying companies into a predefined 
 The classifier operates by measuring the semantic similarity between company descriptions and a static list of insurance-related labels.
 
 It is designed to be:  
--	Simple – takes in CSV input, produces labeled output.  
--   Semantic – uses sentence-transformers (all-MiniLM-L6-v2) to encode textual meaning.  
--   Threshold-based – assigns labels only if similarity exceeds a configurable cutoff (default: 0.32).  
--   Offline – requires no API calls or external services.  
+-	Simple: takes in CSV input, produces labeled output.  
+-   Semantic: uses sentence-transformers (all-MiniLM-L6-v2) to encode textual meaning.  
+-   Threshold-based: assigns labels only if similarity exceeds a configurable cutoff (default: 0.32).  
+-   Offline: requires no API calls or external services.  
   
-The result is a fast, lightweight, and reproducible classification system tailored for insurance use cases.
+The result is a fast, lightweight and reproducible classification system tailored for insurance use cases.
 
 ## First steps
 When I first started the challenge I jumped right into the two files provided, the list of companies and the insurance taxonomy. When I opened the list of companies and saw the description part I instantly thought of matching the words from the description to the labels in insurance taxonomy.  
