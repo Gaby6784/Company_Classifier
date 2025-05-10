@@ -68,7 +68,7 @@ for i in range(len(companies_df)):
     filtered_labels.append(labels)
 ```
 
-## Step 5: Saving the results and printing 
+## Step 5: saving the results and printing 
 ```bash
 companies_df['insurance_label'] = filtered_labels
 companies_df.to_csv("ml_insurance_challenge.csv", index=False)
@@ -102,7 +102,7 @@ Since ground-truth labels were not available, quality was assessed by:
 
 ## Why do I use sentence-transformers
 
-I chose to use sentence-transformers because this project requires an understanding of meaning. The goal is to classify companies into insurance-related categories based on often vague, unstructured descriptions. Sentence-transformers provide a powerful alternative by encoding each company description and each taxonomy label into a semantic vector — a dense numerical representation of its meaning.  
+I chose to use sentence-transformers because this project requires an understanding of meaning. The goal is to classify companies into insurance-related categories based on often vague, unstructured descriptions. Sentence-transformers provide a powerful alternative by encoding each company description and each taxonomy label into a semantic vector.  
 
 
 By comparing these vectors using cosine similarity, the classifier can identify conceptual matches. This enables the system to assign accurate labels even when wording varies significantly, without requiring any labeled training data.  
@@ -110,4 +110,4 @@ By comparing these vectors using cosine similarity, the classifier can identify 
 <img src="https://github.com/Gaby6784/Company_Classifier/blob/main/doc_screenshots/Screenshot%202025-05-10%20at%2017.03.47.png" alt="Alt Text" width="250" height="470">
 
 ## Conclusion
-Although the classifier does a good job overall, there are instances where companies are given labels that are either unrelated or of poor quality.  Raising the similarity threshold alone won't always eliminate these misclassifications; in fact, doing so too much may result in the omission of pertinent labels.
+Although the classifier does a good job overall, there are instances where companies are given labels that are either unrelated or of poor quality. Raising the similarity threshold alone won't always eliminate these misclassifications; in fact, doing so too much may result in the omission of pertinent labels.
