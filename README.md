@@ -20,12 +20,11 @@ The result is a fast, lightweight, and reproducible classification system tailor
 ## First steps
 When I first started the challenge I jumped right into the two files provided, the list of companies and the insurance taxonomy. When I opened the list of companies and saw the description part I instantly thought of matching the words from the description to the labels in insurance taxonomy.  
 
-![companies](https://github.com/Gaby6784/Company_Classifier/blob/main/doc_screenshots/Screenshot%202025-05-10%20at%2014.11.53.png)  
+![companies](https://github.com/Gaby6784/Company_Classifier/blob/main/doc_screenshots/Screenshot%202025-05-10%20at%2014.11.53.png)    
 
 Then, I opened the taxonomy and I was expecting to see a lot more labels because of the large number of companies.  
 
-![taxonomy](https://github.com/Gaby6784/Company_Classifier/blob/main/doc_screenshots/Screenshot%202025-05-10%20at%2014.12.36.png)  
-
+<img src="https://github.com/Gaby6784/Company_Classifier/blob/main/doc_screenshots/Screenshot%202025-05-10%20at%2014.12.36.png" alt="Alt Text" width="300" height="570">
 
 To start off, we need to install the required libraries:  
 ```bash
@@ -108,7 +107,7 @@ I chose to use sentence-transformers because this project requires an understand
 
 By comparing these vectors using cosine similarity, the classifier can identify conceptual matches. This enables the system to assign accurate labels even when wording varies significantly, without requiring any labeled training data.  
 
-
+<img src="https://github.com/Gaby6784/Company_Classifier/blob/main/doc_screenshots/Screenshot%202025-05-10%20at%2017.03.47.png" alt="Alt Text" width="250" height="470">
 
 ## Conclusion
 Although the classifier does a good job overall, there are instances where companies are given labels that are either unrelated or of poor quality.  Raising the similarity threshold alone won't always eliminate these misclassifications; in fact, doing so too much may result in the omission of pertinent labels.
